@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .wrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: 8rem;
+                height: 100vh;
+                font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            }
+
+            .row {
+                cursor: pointer;
+                user-select: none;
+            }
+
+            .audio {
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="row" onclick="document.getElementById('loveit').play()">❤️ it!</div>
+            <div class="row" onclick="document.getElementById('shipit').play()">🛳 it!</div>
+        </div>
+        
+        <div class="audio">
+            <audio id="loveit">
+                <source src="iloveit.mp3">
+            </audio>
+            <audio id="shipit">
+                <source src="shipit.mp3">
+            </audio>
+        </div>
+    </body>
+</html>
