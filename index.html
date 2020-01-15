@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>I ❤️ it! 🛳 it!</title>
+        <title>I ❤️ it! 🛳 it! soundboard</title>
         <style>
             body {
                 margin: 0;
@@ -16,11 +16,19 @@
                 font-size: 8rem;
                 height: 100vh;
                 font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+                align-content: center;
             }
 
             .row {
                 cursor: pointer;
                 user-select: none;
+                flex: 1;
+                display: flex;
+                align-items: flex-end;
+            }
+
+            .row:last-child{
+                align-items: flex-start;
             }
 
             .audio {
@@ -29,11 +37,26 @@
                 top: 0;
                 display: none;
             }
+
+            .animated {
+                animation: heartbeat 1s infinite;
+                animation-direction: alternate;
+                animation-timing-function: linear;
+            }
+
+            @keyframes heartbeat {
+                from {font-size: 9rem}
+                to {font-size: 8rem}
+            }
         </style>
     </head>
     <body>
         <div class="wrapper">
-            <div class="row" onclick="document.getElementById('loveit').play()">❤️ it!</div>
+            <div class="row" onclick="document.getElementById('loveit').play()">
+                <div class="animated">
+                    ❤️ it!
+                </div>
+            </div>
             <div class="row" onclick="document.getElementById('shipit').play()">🛳 it!</div>
         </div>
         
